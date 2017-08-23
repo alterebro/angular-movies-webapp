@@ -1,0 +1,19 @@
+<fieldset>
+	<input type="search" [(ngModel)]="searchByMovieName" placeholder="Search Movies">
+</fieldset>
+
+<ul class="movies-list">
+	<li *ngFor="let movie of movies | FilterMovies: searchByMovieName">
+
+		<figure>
+			<h3>{{movie.name}}</h3>
+			<a [routerLink]="['/movie', movie.id]">
+				<img src="assets/img/movie-covers/{{movie.img}}" />
+			</a>
+			<figcaption>
+				<em>{{movie.length}}</em>
+				<strong>{{movie.rate}}</strong>
+			</figcaption>
+		</figure>
+	</li>
+</ul>

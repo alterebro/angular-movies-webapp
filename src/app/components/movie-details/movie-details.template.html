@@ -1,0 +1,22 @@
+<div *ngFor="let movie of movies" class="movie">
+	<section>
+		<h2>{{movie.name}}</h2>
+		<p>{{movie.description}}</p>
+		<dl>
+			<dt>Genre/s</dt>
+			<dd>
+				<ul>
+					<li *ngFor="let genre of movie.genres">{{genre}}</li>
+				</ul>
+			</dd>
+			<dt>Length</dt>
+			<dd>{{movie.length}}</dd>
+			<dt>Score</dt>
+			<dd>{{movie.rate}}</dd>
+		</dl>
+		<p class="go-back"><a [routerLink]="['/movies']">&larr; Back</a></p>
+	</section>
+	<aside>
+		<img src="assets/img/movie-covers/{{movie.img}}" />
+	</aside>
+</div>
